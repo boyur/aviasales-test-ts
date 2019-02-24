@@ -8,7 +8,7 @@ export const declOfNum = (num: number, titles: string[]): string => {
 };
 
 export const formatDate = memoize((dateString) => {
-  const date = moment(dateString);
+  const date = moment(dateString, 'DD.MM.YY');
 
   return date.format('DD MMM YYYY, ddd');
 });

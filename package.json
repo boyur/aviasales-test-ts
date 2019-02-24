@@ -12,25 +12,26 @@
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
-    "@types/moment": "^2.13.0",
+    "react": "16.8.3",
+    "react-dom": "16.8.3",
+    "react-scripts": "2.1.5",
+    "react-app-polyfill": "^0.2.1",
     "array-findindex-polyfill": "^0.1.0",
     "core-js": "^2.6.5",
     "fast-memoize": "^2.5.1",
     "moment": "^2.24.0",
-    "node-sass": "4.11.0",
-    "react": "16.8.3",
-    "react-app-polyfill": "^0.2.1",
-    "react-dom": "16.8.3",
-    "react-scripts": "2.1.5"
+    "node-sass": "4.11.0"
   },
   "devDependencies": {
+    "@types/moment": "^2.13.0",
     "@types/jest": "^24.0.6",
     "@types/node": "^11.9.5",
     "@types/react": "^16.8.4",
     "@types/react-dom": "^16.8.2",
     "tslint": "5.13.0",
     "tslint-react": "3.6.0",
-    "typescript": "^3.3.3333"
+    "typescript": "^3.3.3333",
+    "gh-pages": "2.0.1"
   },
   "browserslist": [
     "last 2 version",
