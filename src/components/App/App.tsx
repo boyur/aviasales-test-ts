@@ -17,14 +17,14 @@ interface IState {
 }
 
 class App extends PureComponent<{}, IState> {
-  public state = {
+  state = {
     currency: 'RUB',
     filter: [0, 1, 2],
     tickets: null,
     exchangeRates: null,
   };
 
-  public componentDidMount() {
+  componentDidMount() {
     api.getTickets().then((tickets: object[] ) => {
       this.setState({ tickets });
     });
@@ -34,11 +34,11 @@ class App extends PureComponent<{}, IState> {
     });
   }
 
-  public handleChangeCurrency = (currency: string): void => {
+  handleChangeCurrency = (currency: string): void => {
     this.setState({currency});
   }
 
-  public handleChangeFilter = (e: React.ChangeEvent): void => {
+  handleChangeFilter = (e: React.ChangeEvent): void => {
     const { id } = e.target;
     const { filter } = this.state;
 
@@ -59,11 +59,11 @@ class App extends PureComponent<{}, IState> {
     }
   }
 
-  public setOneFilter = (id: string): void => {
+  setOneFilter = (id: string): void => {
     this.setState({ filter: [parseInt(id, 10)] });
   }
 
-  public render() {
+  render() {
     const { currency, exchangeRates, filter } = this.state;
 
     const tickets = getFiltredTickets(this.state.tickets || [], filter);
