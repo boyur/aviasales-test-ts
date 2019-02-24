@@ -1,12 +1,20 @@
+// polyfill for IE 11
+import 'react-app-polyfill/ie11';
+import 'array-findindex-polyfill';
+// polyfill for IE 10
+import 'core-js/es6/map';
+import 'core-js/es6/set';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import monent from 'moment';
+import moment from 'moment';
+import 'moment/locale/ru';
 
 import './index.scss';
 import App from 'components/App';
 import * as serviceWorker from './serviceWorker';
 
-monent.locale();
+moment.locale('ru');
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

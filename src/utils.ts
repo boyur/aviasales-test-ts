@@ -10,7 +10,7 @@ export const declOfNum = (num: number, titles: string[]): string => {
 export const formatDate = memoize((dateString) => {
   const date = moment(dateString);
 
-  return date.format('DD MM YYYY, ddd');
+  return date.format('DD MMM YYYY, ddd');
 });
 
 export const getFiltredTickets = memoize((tickets: ITicket[], filter: number[]): ITicket[] =>
