@@ -1,0 +1,31 @@
+.layout {
+  max-width: 818px;
+  margin: auto;
+
+  @media (max-width: 860px) {
+    width: 565px;
+    padding: 0 40px;
+  }
+
+  @media (max-width: 620px) {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+}
+
+.main {
+  display: flex;
+  width: 100%;
+
+  @media (max-width: 860px) {
+    flex-direction: column;
+  }
+}
+
+.loading {
+  width: 100%;
+  text-align: center;
+  color: #444;
+  font-size: 26px;
+}
