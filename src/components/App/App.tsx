@@ -6,7 +6,7 @@ import SettingsPanel from 'components/SettingsPanel';
 import TicketsList from 'components/TicketsList';
 
 import api from 'api';
-import { getFiltredTickets } from 'utils';
+import { getFilteredTickets } from 'utils';
 import filterConfig from 'configs/filter';
 
 interface IState {
@@ -64,9 +64,9 @@ class App extends PureComponent<{}, IState> {
   }
 
   render() {
-    const { currency, exchangeRates, filter } = this.state;
+    const { currency, exchangeRates, filter, tickets } = this.state;
 
-    const tickets = getFiltredTickets(this.state.tickets || [], filter);
+    const filteredTickets = tickets && getFilteredTickets(tickets, filter);
 
     return (
       <div>
@@ -81,7 +81,7 @@ class App extends PureComponent<{}, IState> {
               setOneFilter={this.setOneFilter}
             />
             <TicketsList
-              tickets={tickets}
+              tickets={filteredTickets}
               currency={currency}
               exchangeRates={exchangeRates}
             />

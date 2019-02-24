@@ -13,7 +13,7 @@ export const formatDate = memoize((dateString) => {
   return date.format('DD MMM YYYY, ddd');
 });
 
-export const getFiltredTickets = memoize((tickets: ITicket[], filter: number[]): ITicket[] =>
+export const getFilteredTickets = memoize((tickets: ITicket[], filter: number[]): ITicket[] =>
   tickets.filter((ticket: ITicket) => {
     const index = filter.findIndex((item: number) => item === ticket.stops);
     return index !== -1;
