@@ -3,5 +3,5 @@ import getExchangeRates from './getExchangeRates';
 
 export default {
   getTickets,
-  getExchangeRates
+  getExchangeRates,
 };
