@@ -1,0 +1,45 @@
+.ticket {
+  display: flex;
+  width: 100%;
+  height: 160px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+
+  box-shadow: 0 1px 4px 0 rgba(91, 137, 164, 0.25);
+  background-color: #fff;
+  box-sizing: border-box;
+
+  @media (max-width: 620px) {
+    flex-direction: column;
+    height: initial;
+    padding-bottom: 10px;
+  }
+}
+
+.ticket__left-column {
+  width: 200px;
+  padding: 20px;
+  text-align: center;
+  border-right: 1px solid #f3f7fa;
+  box-sizing: border-box;
+
+  @media (max-width: 620px) {
+    display: none;
+  }
+}
+
+.ticket__right-column {
+  width: 100%;
+  max-width: 365px;
+  padding: 25px;
+  box-sizing: border-box;
+
+  @media (max-width: 620px) {
+    max-width: inherit;
+    padding: 15px;
+  }
+}
+
+.ticket__carrier-img {
+  width: 120px;
+}

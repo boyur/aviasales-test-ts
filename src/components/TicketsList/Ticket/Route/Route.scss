@@ -1,0 +1,85 @@
+.route {
+  width: 100%;
+}
+
+.route__time-section {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  @media (max-width: 620px) {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+}
+
+.route__time {
+  font-size: 32px;
+  line-height: 26px;
+  color: #4a4a4a;
+
+  @media (max-width: 620px) {
+    font-size: 22px;
+    line-height: 18px;
+  }
+}
+
+.route__path {
+  position: relative;
+  width: 110px;
+  height: 18px;
+  font-size: 10px;
+  color: #8b9497;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 2px 20px 0 20px;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 12px;
+    content: '';
+    border-bottom: 1px solid #d2d5d6;
+  }
+
+  @media (max-width: 620px) {
+    width: 100%;
+  }
+}
+
+.route__path-airplane {
+  position: absolute;
+  bottom: -6px;
+  right: -2px;
+  width: 13px;
+}
+
+.route__main-section {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  font-size: 12px;
+}
+
+.route__city {
+  line-height: 1.5;
+  color: #4a4a4a;
+  font-weight: 600;
+}
+
+.route__date {
+  line-height: 1.5;
+  font-weight: normal;
+  color: #8b9497;
+}
+
+.route__origin {
+  text-align: left;
+}
+
+.route__destination {
+  text-align: right;
+}

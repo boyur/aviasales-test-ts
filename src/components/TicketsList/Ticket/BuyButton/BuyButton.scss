@@ -1,0 +1,23 @@
+.buy-button {
+  width: 160px;
+  padding: 5px;
+  margin-top: 15px;
+  border-radius: 5px;
+  border: none;
+
+  font-size: 16px;
+  line-height: 22px;
+  color: #fff;
+
+  box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 0 0 #d64d08;
+  background-color: #ff6d00;
+
+  cursor: pointer;
+  transition: 0.3s;
+  outline: none;
+
+  &:hover {
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.25), 0 1px 0 0 #f7661d;
+    background-color: #ff8124;
+  }
+}

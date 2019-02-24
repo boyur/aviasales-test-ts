@@ -1,0 +1,20 @@
+.buy-button-mobile {
+  display: none;
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+
+  font-size: 16px;
+  line-height: 22px;
+  color: #2196f3;
+
+  background-color: transparent;
+
+  cursor: pointer;
+  transition: 0.3s;
+  outline: none;
+
+  @media (max-width: 620px) {
+    display: block;
+  }
+}

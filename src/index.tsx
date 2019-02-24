@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import monent from 'moment';
+
 import './index.scss';
 import App from 'components/App';
 import * as serviceWorker from './serviceWorker';
+
+monent.locale();
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

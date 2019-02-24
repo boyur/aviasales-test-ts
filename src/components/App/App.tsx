@@ -1,16 +1,38 @@
-import * as React from 'react';
+import React, { PureComponent } from 'react';
 import './App.scss';
 
 import Header from 'components/Header';
 import SettingsPanel from 'components/SettingsPanel';
+import TicketsList from 'components/TicketsList';
 
+import api from 'api';
+import { getFiltredTickets } from 'utils';
 import filterConfig from 'configs/filter';
 
-class App extends React.PureComponent<{}, IState> {
+interface IState {
+  currency: string;
+  filter: number[];
+  tickets: object[] | null;
+  exchangeRates: object | null;
+}
+
+class App extends PureComponent<{}, IState> {
   public state = {
     currency: 'RUB',
     filter: [0, 1, 2],
+    tickets: null,
+    exchangeRates: null,
   };
+
+  public componentDidMount() {
+    api.getTickets().then((tickets: object[] ) => {
+      this.setState({ tickets });
+    });
+
+    api.getExchangeRates().then((exchangeRates: object) => {
+      this.setState({ exchangeRates });
+    });
+  }
 
   public handleChangeCurrency = (currency: string): void => {
     this.setState({currency});
@@ -42,7 +64,9 @@ class App extends React.PureComponent<{}, IState> {
   }
 
   public render() {
-    const { currency, filter } = this.state;
+    const { currency, exchangeRates, filter } = this.state;
+
+    const tickets = getFiltredTickets(this.state.tickets || [], filter);
 
     return (
       <div>
@@ -56,16 +80,16 @@ class App extends React.PureComponent<{}, IState> {
               handleChangeFilter={this.handleChangeFilter}
               setOneFilter={this.setOneFilter}
             />
+            <TicketsList
+              tickets={tickets}
+              currency={currency}
+              exchangeRates={exchangeRates}
+            />
           </div>
         </div>
       </div>
     );
   }
-}
-
-interface IState {
-  currency: string;
-  filter: number[];
 }
 
 export default App;
